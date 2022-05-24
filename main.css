@@ -1,6 +1,7 @@
 :root {
     --dark-bg: #191718;
-    --size-img: 128px;
+    --size-h-img: 200px;
+    --size-w-img: 150px;
 }
 
 html{
@@ -31,9 +32,21 @@ body{
 }
 
 .sidebar__item {
-    
     width: 150px;
     height: 44px;   
+}
+
+.sidebar__item.active > .title {
+    color: #fff;
+}
+
+.sidebar__item:hover {
+    background-color: #5C5C5C;
+    transition: all 0.2s ease-in;
+}
+.sidebar__item:hover > .title {
+    color: #fff;
+    transition: all 0.3s ease-in;
 }
 
 .title {
@@ -96,9 +109,10 @@ body{
 }
 
 .container__courses {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
     margin: 0 -25px;
-    padding-bottom: 261px;
+    padding-bottom: 182px;
 }
 
 .course {
@@ -111,9 +125,8 @@ body{
 }
 
 .course__paragraph_one > img {
-    margin-right: 16px;
-    width: var(--size-img);
-    height: var(--size-img);
+    min-width: var(--size-w-img);
+    height: auto;
 }
 
 .course__title {
@@ -124,60 +137,24 @@ body{
 }
 
 .course__description {
-    margin: 0;
+    margin-left: 25px;
 }
 
-.course__paragraph_two {
+.course__description, .course__paragraph_two {
     margin: 0;
+    font-size: 16px;
 }
 
 .course {
     margin: 0 25px;
 }
 
+.footer > h2 {
+    margin: 30px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3E3E3E;
 
-/* responsive */
-@media (max-width: 1024px) {
-    .container {
-        margin: 0 20px;
-    }
-
-    .container__courses {
-        display: flex;
-        margin: 0 -12px;
-        padding-bottom: 261px;
-    }
-
-    .course {
-        margin: 0 12px;
-    }
-}
-
-/* responsive */
-@media (max-width: 740px) and (max-width: 1023px) {
-    .sidebar {
-        display: none;
-    }
-    .container {
-        margin: 0 15px;
-    }
-
-    .container__paragram {
-        width: 100%;
-    }
-
-    .container__paragram > .description {
-        margin: 0 15px 38px;
-    }
-
-    .container__courses {
-        display: flex;
-        flex-direction: column;
-        margin: 0 -6px;
-        padding-bottom: 261px;
-    }
-
-    .course {
-        margin: 0 6px;
-    }
 }
